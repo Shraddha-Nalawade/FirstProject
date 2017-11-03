@@ -24,9 +24,9 @@ public class AppTest
 	}
 	
 	@Test
-	public void verify(){
+	public void verify() throws InterruptedException{
 		driver.get("http://www.seleniumhq.org");
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		Thread.sleep(4000);
 		String expectedTitle = "Selenium - Web Browser Automation";
 		String actualTitle = driver.getTitle();
 		Assert.assertEquals(actualTitle,expectedTitle,"wrong title");
