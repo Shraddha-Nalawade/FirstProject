@@ -1,5 +1,7 @@
 package SN101.CH1;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
@@ -24,6 +26,7 @@ public class AppTest
 	@Test
 	public void verify(){
 		driver.get("http://www.seleniumhq.org");
+		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 		String expectedTitle = "Selenium - Web Browser Automation";
 		String actualTitle = driver.getTitle();
 		Assert.assertEquals(actualTitle,expectedTitle,"wrong title");
